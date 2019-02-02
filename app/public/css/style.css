@@ -26,10 +26,6 @@ body {
     box-sizing: border-box;
 }
 
-.vertical-offset-80 {
-    padding-top: 80px;
-}
-
 .img-responsive {
     display: block;
     max-width: 100%;
@@ -97,4 +93,8 @@ img {
 	font-size:12px;
 	padding-left:15px;
 	color:#8B7777;
+}
+
+body,html {
+    height: 100%;
 }
