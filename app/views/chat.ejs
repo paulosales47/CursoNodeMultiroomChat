@@ -6,7 +6,7 @@
 		<title>Multiroom Chat</title>
 		
 		<!-- JQUERY -->
-		<script src="/js/jquery-3.3.1.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
 		
 		<!-- bootstrap-->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -41,34 +41,24 @@
 	</head>
 
 	<body>
-	
-	
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1" id="btn_navbar_toggle">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Multiroom Chat</a>
-				</div>
-				
-				
-				<div class="collapse navbar-collapse" id="navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li>
-							<a href="#" id="exibe_chat">Chat</a>
-						</li>
-						<li>
-							<a href="#" id="exibe_participantes">Participantes</a>
-						</li>
-					</ul>
-				</div>
+		
+		<nav class="navbar navbar-expand-lg navbar-light mb-4 fixed-top">
+			<a class="navbar-brand" href="#">Multiroom Chat</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#" id="exibe_chat">Chat<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="exibe_participantes">Participantes</a>
+					</li>
+				</ul>
 			</div>
 		</nav>
-	
+
 		<div class="container">
             <div class="row conversa" id="conversa">
 				<div class="col-md-1"></div>
@@ -125,7 +115,7 @@
             </div>
         </div>
 		
-		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+		<!-- <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
 			<div class="container">
 				<div class="panel-body campo-mensagem">
 					<form>
@@ -140,6 +130,18 @@
 					</form>
 				</div>
 			</div>
-		</nav>		
+		</nav>		 -->
+		<nav class="navbar navbar-light bg-light fixed-bottom">
+			<div class="col-md-12">
+				<form>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Mensagem">
+						<span class="btn enviar">
+							<img width="30" height="30" src="/images/send.png" />
+						</span>
+					</div>
+				</form>
+			</div>
+		  </nav>
 	</body>
 </html>
