@@ -16,7 +16,17 @@ io.on('connect', function(socket){
     });
 
     socket.on('msgServidor', function(data){
+        //MENSAGENS
         socket.emit('msgCliente', data);
         socket.broadcast.emit('msgCliente', data);
+
+        if(parseInt(data.apelido_atualizado) == 0){
+            console.log('PARTICIPANTES');
+            //PARTICIPANTES
+            socket.emit('participantesCliente', {apelido: data.apelido});
+            socket.broadcast.emit('participantesCliente', {apelido: data.apelido});
+        }
     });
+
+
 });
