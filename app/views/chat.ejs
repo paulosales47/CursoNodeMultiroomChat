@@ -93,14 +93,13 @@
 
 		<nav class="navbar navbar-light bg-light fixed-bottom">
 			<div class="col-md-12">
-				<form>
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Mensagem">
-						<span class="btn enviar">
-							<img width="30" height="30" src="/images/send.png" />
-						</span>
-					</div>
-				</form>
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Mensagem" id="mensagem">
+					<input type="hidden" value="<%= formulario.apelido %>" id="apelido">
+					<span class="btn enviar" id="enviar_mensagem">
+						<img width="30" height="30" src="/images/send.png" />
+					</span>
+				</div>
 			</div>
 		</nav>
 
@@ -111,12 +110,31 @@
 			socket.on('msgCliente', function(data){
 				let html = '<div class="dialogo">' 
 								+'<h4>'+data.apelido+'</h4>'
-								+'<p>'+data.apelido+' acaba de se conectar</p>'
+								+'<p>'+data.mensagem+'</p>'
 						  +'</div>';
 				
 				$("#dialogo").append(html);
-				
 			});
+
+			$("#enviar_mensagem").click(function(){
+				EnviarMensagem();
+			})
+
+			$(document).keypress(function(event){
+				var keycode = (event.keyCode ? event.keyCode : event.which);
+				if(keycode == '13'){
+					EnviarMensagem();
+				}
+			})
+
+			function EnviarMensagem(){
+				let mensagem = $("#mensagem").val();
+				let apelido = $("#apelido").val();
+				socket.emit('msgServidor', {apelido: apelido, mensagem: mensagem});
+
+				$("#mensagem").val('');
+			}
+
 		</script>
 	</body>
 </html>
