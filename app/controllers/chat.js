@@ -7,5 +7,6 @@ module.exports.iniciaChat = function(aplicacao, requisicao, resposta, validation
         return;
     }
 
+    aplicacao.get('io').emit('msgCliente', {apelido: formulario.apelido});
     resposta.render('chat');
 }

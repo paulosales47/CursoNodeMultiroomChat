@@ -6,6 +6,7 @@ let server = app.listen(3001, function(){
 });
 
 let io = socketIo.listen(server);
+app.set('io', io);
 
 io.on('connect', function(socket){
     console.log('Usuário conectou');
