@@ -1,3 +1,3 @@
 module.exports.home = function(aplicacao, requisicao, resposta){
-    resposta.render('index');
+    resposta.render('index', {validacao: false});
 }
