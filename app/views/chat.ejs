@@ -41,7 +41,6 @@
 	</head>
 
 	<body>
-		
 		<nav class="navbar navbar-expand-lg navbar-light mb-4 fixed-top">
 			<a class="navbar-brand" href="#">Multiroom Chat</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,23 +113,7 @@
                 
             </div>
         </div>
-		
-		<!-- <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-			<div class="container">
-				<div class="panel-body campo-mensagem">
-					<form>
-						<div class="col-md-12">
-							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Mensagem">
-								<span class="input-group-btn">
-									<button class="btn btn-default" type="button">></button>
-								</span>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</nav>		 -->
+
 		<nav class="navbar navbar-light bg-light fixed-bottom">
 			<div class="col-md-12">
 				<form>
@@ -142,6 +125,11 @@
 					</div>
 				</form>
 			</div>
-		  </nav>
+		</nav>
+
+		<script src="socket.io/socket.io.js"></script>
+		<script>
+			let socket = io('http://localhost:3001');
+		</script>
 	</body>
 </html>
